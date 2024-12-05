@@ -10,7 +10,7 @@
 
 @media (min-width:1000px) {
     .gambar{
-        width: 1000px;
+        width: 80px;
         display: flex;
         overflow: hidden;
         align-items: center;
