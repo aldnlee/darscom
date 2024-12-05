@@ -82,6 +82,14 @@ radial-gradient(at 90% 100%, hsla(271,100%,70%,1) 0px, transparent 50%);;
   padding: 2rem 0;
 }
 
+@media (max-width:420px){
+  .section-heading {
+    font-size: 3rem;
+    color: var(--primary);
+    padding: 2rem 0;
+  }
+}
+
 #tranding {
   padding: 4rem 0;
   height: 100%;
@@ -241,4 +249,23 @@ radial-gradient(at 90% 100%, hsla(271,100%,70%,1) 0px, transparent 50%);;
 
 .tranding-slider-control .swiper-pagination .swiper-pagination-bullet-active {
   background: var(--primary);
+}
+
+.my-button {  
+  display: flex;
+  background: linear-gradient(45deg, #ff6b6b, #f7b733);
+  width: 200px;
+  font-family: "Bricolage Grotesque", sans-serif;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  margin: auto auto 20px auto; 
+  color: white;   
+  padding: 10px 20px;   
+  border: none;   
+  border-radius: 50px;   
+  cursor: pointer;   
+}  
+.my-button:hover {  
+  background: linear-gradient(45deg, #8b3636, #815f19);
 }
