@@ -86,7 +86,7 @@ radial-gradient(at 90% 100%, hsla(271,100%,70%,1) 0px, transparent 50%);;
   .section-heading {
     font-size: 3rem;
     color: var(--primary);
-    padding: 2rem 0;
+    padding: 2rem 1rem;
   }
 }
 
