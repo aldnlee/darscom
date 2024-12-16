@@ -153,7 +153,7 @@ body {
   align-items: center;
   justify-content: center;
   justify-items: center;
-  background: linear-gradient(45deg, #ffb039, #ffffff, #50b3f7); /* Gradient colors */
+  background: linear-gradient(45deg, #ffffff, #ffffff, #50b3f7); /* Gradient colors */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
