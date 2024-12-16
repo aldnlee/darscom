@@ -560,6 +560,11 @@ header
   color: #f5a425;
 }
 
+#logo{
+  width: 180px;
+}
+
+
 @media (max-width: 1200px) {
   .header-area .main-nav .nav li {
     padding-left: 7px;
