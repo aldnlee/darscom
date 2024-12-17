@@ -565,6 +565,21 @@ header
 }
 
 
+.profile{
+  width: 46px; height: 46px;
+   background-image: url("images/profile-circle-svgrepo-com.png"); 
+   background-size: cover;
+   transition: background-image 0.3s ease-in-out;
+
+}
+.profile:hover { 
+  background-image: url("images/profile-circle-svgrepo-com-hover.png"); 
+  width: 46px; height: 46px;
+  content: ''; 
+  display: block;
+}
+
+
 @media (max-width: 1200px) {
   .header-area .main-nav .nav li {
     padding-left: 7px;
