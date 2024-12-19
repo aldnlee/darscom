@@ -158,7 +158,7 @@ body {
 .main-button-red a {
   font-size: 13px;
   color: #fff;
-  background-color: #a12c2f;
+  background-color: #1A85FF;
   padding: 12px 30px;
   display: inline-block;
   border-radius: 22px;
@@ -1527,7 +1527,7 @@ section.meetings-page .filters {
 
 section.meetings-page .filters li {
   font-size: 13px;
-  color: #a12c2f;
+  color: #1A85FF;
   background-color: #fff;
   padding: 11px 30px;
   display: inline-block;
@@ -1541,7 +1541,7 @@ section.meetings-page .filters li {
 
 section.meetings-page .filters ul li.active,
 section.meetings-page .filters ul li:hover {
-  background-color: #a12c2f;
+  background-color: #1A85FF;
   color: #fff;
 }
 
