@@ -578,6 +578,40 @@ header
   content: ''; 
   display: block;
 }
+/* dashboard.css */
+.profile {
+  position: relative;
+  display: inline-block;
+}
+
+.signout {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile:hover .signout {
+  display: block;
+}
+
+#logout-btn {
+  background-color: #EE4B2B;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+#logout-btn:hover {
+  background-color: #d43f1a;
+}
+
 
 
 @media (max-width: 1200px) {

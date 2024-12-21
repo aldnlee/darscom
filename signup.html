@@ -5,10 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="signup.css">
-    <script type="module" src="register.js" defer>
-
-    </script>
-    
+    <script type="module" src="register.js" defer></script>
 </head>
 <body>
     <main class="main-login">
@@ -19,7 +16,7 @@
 
         <div class="right-login">
             <div class="card-login">
-                <h1>Login</h1>
+                <h1>Sign Up</h1>
                 <div class="textfield">
                     <label for="user">User</label>
                     <input type="text" name="user" placeholder="User" id="email" required>
@@ -30,8 +27,18 @@
                     <input type="password" name="password" placeholder="Password" id="password" required>
                 </div>
 
+                <div class="textfield">
+                    <label for="role">Role</label>
+                    <label>
+                        <input type="radio" name="role" value="user" required> User
+                    </label>
+                    <label>
+                        <input type="radio" name="role" value="mentor" required> Mentor
+                    </label>
+                </div>
+
                 <button id="submit" type="submit" class="btn-login">Sign Up</button>
-                <p style="color: rgb(32, 147, 255);">You have account? <a href="login2.html" style="color: aliceblue;"> login here </a></p>
+                <p style="color: rgb(32, 147, 255);">You have an account? <a href="login2.html" style="color: aliceblue;">Login here</a></p>
             </div>
         </div>
     </main>
