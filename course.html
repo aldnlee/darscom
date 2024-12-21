@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <script type="module" src="courses_crud.js" defer></script>
+</head>
+<body>
+    <h1>Submit Course Information</h1>
+    <form id="course-form">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required>
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required></textarea>
+        <label for="youtube-link">YouTube Link:</label>
+        <input type="url" id="youtube-link" name="youtube-link" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    <h2>Submitted Courses</h2>
+    <div id="courses-list"></div>
+</body>
+</html>
