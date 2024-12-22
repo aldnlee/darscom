@@ -1,5 +1,5 @@
 const APP_ID = "4d3f6922583245fca807024ab244e043"
-const TOKEN = "007eJxTYOgRTXm+bG9ZesGfH6Z28wRYtyz0Pz1r3ZdJxz9UCL8oePBegcEkxTjNzNLIyNTC2MjENC050cLA3MDIJDHJyMQk1cDEeLNRRnpDICOD8fEqBkYoBPFZGHITM/MYGADs6iEN"
+const TOKEN = "007eJxTYFA4cSBAWaWOa7t2u0WRpxVfjY3lsm1X5iikHc/M/SbJf1qBwSTFOM3M0sjI1MLYyMQ0LTnRwsDcwMgkMcnIxCTVwMQ4PiwjvSGQkeEO8wtmRgYIBPFZGHITM/MYGABK2hwL"
 const CHANNEL = "main"
 
 const client = AgoraRTC.createClient({mode:'rtc', codec:'vp8'})
@@ -32,7 +32,6 @@ let joinStream = async () => {
     document.getElementById('join-btn').style.display = 'none'
     document.getElementById('stream-controls').style.display = 'flex'
 }
-
 let handleUserJoined = async (user, mediaType) => {
     remoteUsers[user.uid] = user 
     await client.subscribe(user, mediaType)
