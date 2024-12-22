@@ -27,6 +27,7 @@ onAuthStateChanged(auth, (user) => {
     // User is authenticated, proceed with CRUD operations
     const availabilityForm = document.getElementById('availability-form');
     const meetingsList = document.getElementById('meetings-list');
+    const joinMeetingsList = document.getElementById('join-meetings-list');
 
     // Submit availability
     availabilityForm.addEventListener('submit', async (e) => {
@@ -41,7 +42,7 @@ onAuthStateChanged(auth, (user) => {
           time: time
         });
         alert('Availability submitted successfully!');
-        loadMeetings();
+        loadMeetings(); // Ensure meetings are loaded after submission
       } catch (error) {
         console.error('Error submitting availability: ', error);
       }
@@ -50,18 +51,43 @@ onAuthStateChanged(auth, (user) => {
     // Load meetings
     const loadMeetings = async () => {
       meetingsList.innerHTML = '';
+      joinMeetingsList.innerHTML = '';
       const querySnapshot = await getDocs(collection(db, 'meetings'));
       querySnapshot.forEach((doc) => {
         const meeting = doc.data();
+        const meetingItem = document.createElement('div');
+        meetingItem.innerHTML = `
+          <p>${meeting.date} at ${meeting.time}</p>
+          <button onclick="joinMeeting('${doc.id}')">Join</button>
+          ${meeting.mentorId === user.uid ? `<button onclick="deleteMeeting('${doc.id}')">Delete</button>` : ''}
+        `;
         if (meeting.mentorId === user.uid) {
-          const meetingItem = document.createElement('div');
-          meetingItem.innerHTML = `
-            <p>${meeting.date} at ${meeting.time}</p>
-            <button onclick="deleteMeeting('${doc.id}')">Delete</button>
-          `;
           meetingsList.appendChild(meetingItem);
+        } else {
+          joinMeetingsList.appendChild(meetingItem);
         }
       });
+    };
+
+    // Join meeting
+    window.joinMeeting = async (meetingId) => {
+      const user = auth.currentUser;
+      if (user) {
+        try {
+          await addDoc(collection(db, 'bookings'), {
+            userId: user.uid,
+            meetingId: meetingId,
+            timestamp: new Date()
+          });
+          alert('You have successfully joined the meeting!');
+          // Redirect to Agora stream page
+          window.location.href = "agora_stream.html"; // Replace with your actual Agora stream page URL
+        } catch (error) {
+          console.error('Error joining meeting: ', error);
+        }
+      } else {
+        alert('You need to be logged in to join a meeting.');
+      }
     };
 
     // Delete meeting
@@ -69,7 +95,7 @@ onAuthStateChanged(auth, (user) => {
       try {
         await deleteDoc(doc(db, 'meetings', id));
         alert('Meeting deleted successfully!');
-        loadMeetings();
+        loadMeetings(); // Ensure meetings are loaded after deletion
       } catch (error) {
         console.error('Error deleting meeting: ', error);
       }
