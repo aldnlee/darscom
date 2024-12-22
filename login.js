@@ -56,3 +56,5 @@ submit.addEventListener("click", function (event) {
       alert(errorMessage);
     });
 });
+// Store user data on successful login in localStorage
+
