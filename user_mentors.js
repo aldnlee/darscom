@@ -47,7 +47,7 @@ window.joinMeeting = async (meetingId) => {
       });
       alert('You have successfully joined the meeting!');
       // Redirect to Agora stream page
-      window.location.href = "/agora/agora_stream.html"; // Replace with your actual Agora stream page URL
+      window.location.href = "agora_stream.html"; // Replace with your actual Agora stream page URL
     } catch (error) {
       console.error('Error joining meeting: ', error);
     }
