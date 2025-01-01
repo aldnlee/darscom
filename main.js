@@ -1,5 +1,5 @@
 const APP_ID = "4d3f6922583245fca807024ab244e043"
-const TOKEN = "007eJxTYHhZuP9O8h/+oltC6+9Y7S4XqRYsmmaxd5/LBKcJ29q1u3oUGExSjNPMLI2MTC2MjUxM05ITLQzMDYxMEpOMTExSDUyMaziK0hsCGRnm56iyMDJAIIjPwpCbmJnHwAAAUGYeUQ=="
+const TOKEN = "007eJxTYHCK+MwddHEV8/wS6345nxknOTdazDAMcgqyqHvZu/+W8R0FBpMU4zQzSyMjUwtjIxPTtORECwNzAyOTxCQjE5NUAxPj6j/F6Q2BjAynbxewMDJAIIjPwpCbmJnHwAAA1xgeeQ=="
 const CHANNEL = "main"
 
 const client = AgoraRTC.createClient({mode:'rtc', codec:'vp8'})
@@ -11,7 +11,7 @@ let joinAndDisplayLocalStream = async () => {
 
     client.on('user-published', handleUserJoined)
     
-    client.on('user-left', handleUserLeft)
+    client.on('user-left', handleUserLeft) 
     
     let UID = await client.join(APP_ID, CHANNEL, TOKEN, null)
 
